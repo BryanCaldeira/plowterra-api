@@ -34,5 +34,3 @@ const listener = app.listen(port, () => {
 connect(process.env.MONGO_CONNECTION_STRING ?? "");
 
 export const handler = serverless(app);
-
-export default app;

@@ -8,6 +8,8 @@ const ignoreAuthRoutes = ["auth", "farms", "hello"];
 
 // all requests pass through this function to check "Authorization" token
 async function authUser(req: Request, res: Response, next: NextFunction) {
+  console.log(req.url.split("/")?.at(3)?.toLocaleLowerCase("en-US"));
+
   // check for ignore paths
   const isIgnorePath = ignoreAuthRoutes.some(
     (route) => req.url.split("/")?.at(3)?.toLocaleLowerCase("en-US") === route
