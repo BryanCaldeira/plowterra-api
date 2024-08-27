@@ -1,14 +1,14 @@
 import { NextFunction, Request, Response } from "express";
+import Payroll, { FarmPayroll } from "../models/Payroll";
+
 import floor from "lodash/floor";
 import groupBy from "lodash/groupBy";
 import mongoose from "mongoose";
 import HarvestLog from "../models/HarvestLog";
-import Payroll, { FarmPayroll } from "../models/Payroll";
 import SeasonSchema from "../models/Season";
-import { createSMSpayroll } from "../services/messageService";
 import { pluralize } from "../services/pluralize";
-import Message from "../shared/Message";
 import { calculatePayrollEndDate } from "../shared/date.helpers";
+import Message from "../shared/Message";
 
 const message = new Message("payroll");
 
@@ -344,17 +344,17 @@ async function create(req: Request, res: Response, next: NextFunction) {
             return (payroll.season as any).unit;
           }
         });
-        createSMSpayroll(
-          req,
-          res,
-          phoneSMS,
-          nameSMS,
-          netAmountSMS,
-          collectedAmountSMS,
-          currencySMS,
-          productSMS,
-          unitSMS
-        );
+        // createSMSpayroll(
+        //   req,
+        //   res,
+        //   phoneSMS,
+        //   nameSMS,
+        //   netAmountSMS,
+        //   collectedAmountSMS,
+        //   currencySMS,
+        //   productSMS,
+        //   unitSMS
+        // );
       } catch (error) {
         console.log({ error });
         console.error("abort transaction");

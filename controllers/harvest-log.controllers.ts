@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 
 import { MongooseError } from "mongoose";
-import harvestLogMessage from "../messages/harvest-log.messages";
 import HarvestLog from "../models/HarvestLog";
-import { createSMSlog } from "../services/messageService";
-import { pluralize } from "../services/pluralize";
 import { compareDates } from "../shared/date.helpers";
+// import { createSMSlog } from "../services/messageService";
+import harvestLogMessage from "../messages/harvest-log.messages";
+import { pluralize } from "../services/pluralize";
 
 // import dotenv from 'dotenv';
 // dotenv.config();
@@ -142,17 +142,17 @@ const create = async (req: Request, res: Response) => {
 
     let currency = (savedHarvestLog.season as any).currency.name;
 
-    createSMSlog(
-      req,
-      res,
-      pickerPhone,
-      pickerName,
-      netAmount,
-      unit,
-      product,
-      payment,
-      currency
-    );
+    // createSMSlog(
+    //   req,
+    //   res,
+    //   pickerPhone,
+    //   pickerName,
+    //   netAmount,
+    //   unit,
+    //   product,
+    //   payment,
+    //   currency
+    // );
   } catch (error) {
     // if there are any validation errors
     if ((error as any).name === "ValidationError") {
