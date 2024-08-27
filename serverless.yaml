@@ -2,7 +2,7 @@ service: plowterra-api
 provider:
   name: aws
   runtime: nodejs20.x
-  region: us-west-2
+  region: ap-south-1
   memorySize: 128
 functions:
   app:
