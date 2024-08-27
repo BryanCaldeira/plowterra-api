@@ -7,8 +7,8 @@ import mongoose from "mongoose";
 import HarvestLog from "../models/HarvestLog";
 import SeasonSchema from "../models/Season";
 import { pluralize } from "../services/pluralize";
-import { calculatePayrollEndDate } from "../shared/date.helpers";
 import Message from "../shared/Message";
+import { calculatePayrollEndDate } from "../shared/date.helpers";
 
 const message = new Message("payroll");
 
