@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(authUser);
 app.use("/api/v1", router);
 
-app.get("/hello", (req: Request, res: Response) => {
+app.get("/api/v1/hello", (req: Request, res: Response) => {
   res.json({ message: "Hi from team Voyagers" });
 });
 

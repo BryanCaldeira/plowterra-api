@@ -4,7 +4,7 @@ import userMessage from "../messages/user.messages";
 import User from "../models/User";
 import { verifyToken } from "../shared/jwt-token.helpers";
 
-const ignoreAuthRoutes = ["auth", "farms"];
+const ignoreAuthRoutes = ["auth", "farms", "hello"];
 
 // all requests pass through this function to check "Authorization" token
 async function authUser(req: Request, res: Response, next: NextFunction) {
