@@ -9,7 +9,8 @@
     "start": "node dist/nodejs/app.js",
     "lint": "npx prettier --write .",
     "postbuild": "cp -R serverless.yaml node_modules dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "versel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
